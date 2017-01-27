@@ -1,0 +1,9 @@
+<input ng-model='vm.searchMovie' />
+<input type="submit" value="search" ng-click='vm.movieClick(vm.searchMovie)' />
+<div ng-repeat="data in vm.movieResponse.Search">
+    <p>{{data.Title}}</p>
+    <p>{{data.Year}}</p>
+    <img src="{{data.Poster}}" />
+    <div><a ui-sref="details({movieDetailId: '{{data.imdbID}}'})">details</a></div>
+</div>
+<div class="well" ui-view></div>
